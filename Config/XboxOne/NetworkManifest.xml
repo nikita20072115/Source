@@ -1,0 +1,73 @@
+<mx:SocketDescriptions>
+	<mx:SocketDescription Name="SecureGameSocketUdp" SecureIpProtocol="Udp" BoundPort="7777-7797">
+		<mx:AllowedUsages>
+			<mx:SecureDeviceSocketUsage Type="Initiate" />
+			<mx:SecureDeviceSocketUsage Type="Accept" />
+			<mx:SecureDeviceSocketUsage Type="SendGameData" />
+			<mx:SecureDeviceSocketUsage Type="ReceiveGameData" />
+			<mx:SecureDeviceSocketUsage Type="SendChat" />
+			<mx:SecureDeviceSocketUsage Type="ReceiveChat" />
+		</mx:AllowedUsages>
+	</mx:SocketDescription>
+	<mx:SocketDescription Name="SecurePartySocketUdp" SecureIpProtocol="Udp" BoundPort="16000">
+		<mx:AllowedUsages>
+			<mx:SecureDeviceSocketUsage Type="Initiate" />
+			<mx:SecureDeviceSocketUsage Type="Accept" />
+			<mx:SecureDeviceSocketUsage Type="SendGameData" />
+			<mx:SecureDeviceSocketUsage Type="ReceiveGameData" />
+			<mx:SecureDeviceSocketUsage Type="SendChat" />
+			<mx:SecureDeviceSocketUsage Type="ReceiveChat" />
+		</mx:AllowedUsages>
+	</mx:SocketDescription>
+	<mx:SocketDescription Name="DedicatedQoSSocketUdp" SecureIpProtocol="Udp" BoundPort="10000">
+		<mx:AllowedUsages>
+			<mx:SecureDeviceSocketUsage Type="Initiate" />
+			<mx:SecureDeviceSocketUsage Type="Accept" />
+			<mx:SecureDeviceSocketUsage Type="SendInsecure" />
+			<mx:SecureDeviceSocketUsage Type="ReceiveInsecure" />
+		</mx:AllowedUsages>
+	</mx:SocketDescription>
+	<mx:SocketDescription Name="DedicatedGameSocketUdp" SecureIpProtocol="Udp" BoundPort="7777-7797">
+		<mx:AllowedUsages>
+			<mx:SecureDeviceSocketUsage Type="Initiate" />
+			<mx:SecureDeviceSocketUsage Type="Accept" />
+			<mx:SecureDeviceSocketUsage Type="SendInsecure" />
+			<mx:SecureDeviceSocketUsage Type="ReceiveInsecure" />
+		</mx:AllowedUsages>
+	</mx:SocketDescription>
+	<mx:SocketDescription Name="DedicatedLobbySocketUdp" SecureIpProtocol="Udp" BoundPort="17000-17020">
+		<mx:AllowedUsages>
+			<mx:SecureDeviceSocketUsage Type="Initiate" />
+			<mx:SecureDeviceSocketUsage Type="Accept" />
+			<mx:SecureDeviceSocketUsage Type="SendInsecure" />
+			<mx:SecureDeviceSocketUsage Type="ReceiveInsecure" />
+		</mx:AllowedUsages>
+	</mx:SocketDescription>
+</mx:SocketDescriptions>
+<mx:SecureDeviceAssociationTemplates>
+	<mx:SecureDeviceAssociationTemplate Name="GameTrafficUdp" InitiatorSocketDescription="SecureGameSocketUdp" AcceptorSocketDescription="SecureGameSocketUdp" MultiplayerSessionRequirement="None">
+		<mx:AllowedUsages>
+			<mx:SecureDeviceAssociationUsage Type="Default" />
+		</mx:AllowedUsages>
+	</mx:SecureDeviceAssociationTemplate>
+	<mx:SecureDeviceAssociationTemplate Name="PartyTrafficUdp" InitiatorSocketDescription="SecurePartySocketUdp" AcceptorSocketDescription="SecurePartySocketUdp" MultiplayerSessionRequirement="None">
+		<mx:AllowedUsages>
+			<mx:SecureDeviceAssociationUsage Type="Default" />
+		</mx:AllowedUsages>
+	</mx:SecureDeviceAssociationTemplate>
+	<mx:SecureDeviceAssociationTemplate Name="DedicatedQoSTrafficUdp" InitiatorSocketDescription="DedicatedQoSSocketUdp" AcceptorSocketDescription="DedicatedQoSSocketUdp" MultiplayerSessionRequirement="None">
+		<mx:AllowedUsages>
+			<mx:SecureDeviceAssociationUsage Type="Default" />
+		</mx:AllowedUsages>
+	</mx:SecureDeviceAssociationTemplate>
+	<mx:SecureDeviceAssociationTemplate Name="DedicatedGameTrafficUdp" InitiatorSocketDescription="DedicatedGameSocketUdp" AcceptorSocketDescription="DedicatedGameSocketUdp" MultiplayerSessionRequirement="None">
+		<mx:AllowedUsages>
+			<mx:SecureDeviceAssociationUsage Type="Default" />
+		</mx:AllowedUsages>
+	</mx:SecureDeviceAssociationTemplate>
+	<mx:SecureDeviceAssociationTemplate Name="DedicatedLobbyTrafficUdp" InitiatorSocketDescription="DedicatedLobbySocketUdp" AcceptorSocketDescription="DedicatedLobbySocketUdp" MultiplayerSessionRequirement="None">
+		<mx:AllowedUsages>
+			<mx:SecureDeviceAssociationUsage Type="Default" />
+		</mx:AllowedUsages>
+	</mx:SecureDeviceAssociationTemplate>
+</mx:SecureDeviceAssociationTemplates>
